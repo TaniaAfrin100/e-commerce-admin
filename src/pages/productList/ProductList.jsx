@@ -8,9 +8,11 @@ export default function ProductList() {
   const[foodlist,setFoodList]=useState([]);
   
   useEffect(()=>{
-    Axios.get("http://localhost:5001/api/products").then((response)=>{
-      setFoodList(response.data);
-    })
+    Axios.get("https://e-commerce-backend-c4z0.onrender.com/api/products").then(
+      (response) => {
+        setFoodList(response.data);
+      }
+    );
 
   },[foodlist])
  

@@ -27,9 +27,13 @@ export const NewProduct=()=> {
     event.preventDefault();
     console.log(productData)
     try {
-      const {data}=await axios.post('http://localhost:5001/api/products/newproduct',{
-        ...productData,
-      },{ withCredentials: true })
+      const { data } = await axios.post(
+        "https://e-commerce-backend-c4z0.onrender.com/api/products/newproduct",
+        {
+          ...productData,
+        },
+        { withCredentials: true }
+      );
       if (data) {
         if (data.errors) {
           const { title,img,desc,catagories,price,inStock } = data.errors;

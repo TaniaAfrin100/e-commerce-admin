@@ -6,9 +6,11 @@ export default function UserList() {
   // const [data, setData] = useState(userRows);
   const[userList,setUserList]=useState([]);
   useEffect(()=>{
-    Axios.get("http://localhost:5001/api/users").then((response)=>{
-      setUserList(response.data);
-    })
+    Axios.get("https://e-commerce-backend-c4z0.onrender.com/api/users").then(
+      (response) => {
+        setUserList(response.data);
+      }
+    );
 
   },[userList])
 
